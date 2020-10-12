@@ -13,7 +13,7 @@ from unittest import TestCase, main
 
 from nni.compression.torch import L1FilterPruner, apply_compression_results, ModelSpeedup
 
-torch.manual_seed(0)
+#torch.manual_seed(0)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 2
 # the relative distance
