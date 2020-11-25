@@ -274,7 +274,7 @@ def bourgain_embedding_matrix(distance_matrix):
     n = len(distance_matrix)
     if n == 1:
         return distance_matrix
-    np.random.seed(123)
+    #np.random.seed(123)
     distort_elements = []
     r = range(n)
     k = int(math.ceil(math.log(n) / math.log(2) - 1))

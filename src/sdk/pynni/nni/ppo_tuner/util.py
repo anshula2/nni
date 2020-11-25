@@ -17,9 +17,9 @@ def set_global_seeds(i):
     """set global seeds"""
     rank = 0
     myseed = i  + 1000 * rank if i is not None else None
-    tf.set_random_seed(myseed)
-    np.random.seed(myseed)
-    random.seed(myseed)
+    #tf.set_random_seed(myseed)
+    #np.random.seed(myseed)
+    #random.seed(myseed)
 
 def batch_to_seq(h, nbatch, nsteps, flat=False):
     """convert from batch to sequence"""

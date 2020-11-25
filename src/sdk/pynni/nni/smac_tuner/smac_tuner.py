@@ -103,28 +103,30 @@ class SMACTuner(Tuner):
         self.cs = scen.cs
 
         if args.mode == "SMAC":
+            random_seed_number_for_flakiness_testing = numpy.random.randint(1, 9999999) 
             optimizer = SMAC(
                 scenario=scen,
-                rng=np.random.RandomState(args.seed),
+                rng=np.random.RandomState(random_seed_number_for_flakiness_testing),
                 runhistory=rh,
                 initial_configurations=initial_configs,
                 stats=stats,
                 restore_incumbent=incumbent,
-                run_id=args.seed)
+                run_id=random_seed_number_for_flakiness_testing)
         elif args.mode == "ROAR":
+            random_seed_number_for_flakiness_testing = numpy.random.randint(1, 9999999)
             optimizer = ROAR(
                 scenario=scen,
-                rng=np.random.RandomState(args.seed),
+                rng=np.random.RandomState(random_seed_number_for_flakiness_testing),
                 runhistory=rh,
                 initial_configurations=initial_configs,
-                run_id=args.seed)
+                run_id=random_seed_number_for_flakiness_testing)
         elif args.mode == "EPILS":
             optimizer = EPILS(
                 scenario=scen,
-                rng=np.random.RandomState(args.seed),
+                rng=np.random.RandomState(random_seed_number_for_flakiness_testing),
                 runhistory=rh,
                 initial_configurations=initial_configs,
-                run_id=args.seed)
+                run_id=random_seed_number_for_flakiness_testing)
         else:
             optimizer = None
 

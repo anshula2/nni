@@ -154,10 +154,10 @@ class AMCPruner(Pruner):
         self.export_path = export_path
 
         if seed is not None:
-            np.random.seed(seed)
-            torch.manual_seed(seed)
-            torch.cuda.manual_seed(seed)
-
+            #np.random.seed(seed)
+            #torch.manual_seed(seed)
+            #torch.cuda.manual_seed(seed)
+            pass
         checkpoint = deepcopy(model.state_dict())
 
         super().__init__(model, config_list, optimizer=None)
